@@ -1,0 +1,18 @@
+---
+title: "XGBoost workbook"
+output: html_notebook
+---
+
+# Workbook for the Ggplot lesson
+
+```{r}
+# libraries we're going to use
+library(xgboost) # for xgboost
+library(tidyverse) # general utility functions
+library(data.table)
+
+# read in & clean our data
+chocolateData <- fread("../input/flavors_of_cacao.csv") %>%
+    clean_names() %>% # clean the names
+    filter(ref != "REF") # remove the first row (which has no data)
+```
